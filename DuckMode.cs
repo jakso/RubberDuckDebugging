@@ -4,6 +4,5 @@ namespace Rubber_Duck_Debugging
     {
         Resting,
         Listening,
-        Info
     }
 }
