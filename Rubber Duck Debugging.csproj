@@ -94,6 +94,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="project.json" />
+    <Content Include="Assets\rubber_duck.png" />
     <Content Include="stored.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -118,8 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\information-icon25x25.png" />
-    <Content Include="Assets\rubber_duck.jpg" />
-    <Content Include="Assets\rubber_duck_black.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

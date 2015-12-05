@@ -7,12 +7,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
+    <Grid>
+        <StackPanel Background="Black" >
             <Image Margin="0,25,25,0" HorizontalAlignment="Right" Stretch="None" IsTapEnabled="True" Tapped="Info_OnTapped" Name="Info" Source="Assets/information-icon25x25.png"></Image>
-            <TextBlock Margin="25,0,25,0" Height="110" FontSize="20" FontWeight="Bold" TextWrapping="WrapWholeWords" TextAlignment="Center" Name="HeaderText"></TextBlock>
-            <Image Margin="25,0,25,0" Source ="Assets/rubber_duck.jpg"></Image>
-            <Button Margin="40" HorizontalAlignment="Center" Width="250" Background="Black" Foreground="White" Click="OnOffButtonClick" Name="OnOffButton"></Button>
+            <TextBlock Foreground="White" Margin="25,0,25,0" Height="110" FontSize="20" FontWeight="Bold" TextWrapping="WrapWholeWords" TextAlignment="Center" Name="HeaderText"></TextBlock>
+            <Image Margin="25,0,25,0" Source ="Assets/rubber_duck.png"></Image>
+            <Button Background="Black" Foreground="White" BorderThickness="1" BorderBrush="White"  Margin="20" HorizontalAlignment="Center" Width="250" Click="OnOffButtonClick" Name="OnOffButton"></Button>
         </StackPanel>
     </Grid>
 </Page>

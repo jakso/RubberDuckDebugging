@@ -61,7 +61,7 @@ namespace Rubber_Duck_Debugging
         private void SetHeader()
         {
             HeaderText.Text = Mode == DuckMode.Listening
-                ? "Now, Explain to me... What are you trying to do?"
+                ? "Explain your problem to me"
                 : "Zzzzzzzz";
         }
 
