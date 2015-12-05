@@ -1,22 +1,21 @@
-﻿using Windows.UI.Xaml;
+﻿using System.Linq;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+using Windows.UI.Xaml.Input;
 
 namespace Rubber_Duck_Debugging
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
         public DuckMode Mode { get; set; }
+        public int NumberOfProblemsSolved { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
 
             Mode = DuckMode.Resting;
+            NumberOfProblemsSolved = int.Parse(StoredDataHandler.GetData().Result.Single().NumberOfProblems);
             SetHeader();
             SetButtonText();
         }
@@ -28,7 +27,17 @@ namespace Rubber_Duck_Debugging
 
         private void ToggleMode()
         {
-            Mode = Mode == DuckMode.Resting ? DuckMode.Listening : DuckMode.Resting;
+            if (Mode == DuckMode.Listening)
+            {
+                NumberOfProblemsSolved++;
+                StoredDataHandler.WriteData(NumberOfProblemsSolved.ToString());
+                Mode = DuckMode.Resting;
+            }
+            else
+            {
+                Mode = DuckMode.Listening;
+            }
+
             SetHeader();
             SetButtonText();
         }
@@ -45,6 +54,11 @@ namespace Rubber_Duck_Debugging
             HeaderText.Text = Mode == DuckMode.Listening
                 ? "Now, Explain to me... What are you trying to do?"
                 : "Zzzzzzzz";
+        }
+
+        private void Info_OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            HeaderText.Text = string.Format("I have helped you solve {0} problems", NumberOfProblemsSolved);
         }
     }
 }
