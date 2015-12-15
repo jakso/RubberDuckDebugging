@@ -95,6 +95,8 @@
     </Content>
     <None Include="project.json" />
     <Content Include="Assets\rubber_duck.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
     <Content Include="stored.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
